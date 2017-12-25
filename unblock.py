@@ -22,6 +22,6 @@ with open(HOSTS_PATH, 'r+') as h:
                 print('- %s' %w)
 
     except ValueError:
-        print('No websites were previously blocked')
+        print('No websites were blocked')
 
 subprocess.call(['dscacheutil', '-flushcache'])

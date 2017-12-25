@@ -15,7 +15,7 @@ with open(HOSTS_PATH, 'r+') as h:
         i = lines.index(TAG)
         already_blocked = lines[i+1:]
         lines = lines[:i+1]
-        print('These websites were already being blocked:')
+        print('These websites were blocked:')
         for w in already_blocked:
             if not w == '':
                 print('- %s' %w)
@@ -24,7 +24,7 @@ with open(HOSTS_PATH, 'r+') as h:
 
     except ValueError:
         lines.append(TAG)
-        print('No websites were previously blocked')
+        print('No websites were blocked')
         print('')
     
     for w in websites_to_block:
