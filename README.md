@@ -7,7 +7,7 @@
 ## Usage
 
 ### Block
-To block websites, add them to the list `websites_to_block` in block.py. Then in Terminal, navigate to the directory containing block.py and run 
+To block websites, add their urls to the file websites.txt, with one url on each line. Then in Terminal, navigate to the directory containing block.py and run 
 
 	sudo python block.py
 
@@ -15,10 +15,9 @@ This script can be run repeatedly. Each time block.py is run, the websites that 
 
 ### Unblock
 To unblock, use the Terminal to navigate to the directory containing unblock.py and run 
-
 	sudo python unblock.py
 
-This unblocks all blocked websites, if any. 
+This unblocks all websites listed in websites.txt. 
 
 It is thus safe to run this repeatedly, even while no websites are being blocked.
 

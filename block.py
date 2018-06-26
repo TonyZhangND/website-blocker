@@ -2,10 +2,13 @@ import subprocess
 
 TAG = '# Blocked websites'
 HOSTS_PATH = '/etc/hosts'
+WEBSITES = "websites.txt"
 
-websites_to_block = ['www.facebook.com', 'facebook.com', 
-                    'www.youtube.com', 'youtube.com'
-                    ]
+
+
+with open(WEBSITES, 'r') as f:
+    lines = f.read().split('\n')
+    websites_to_block = [l.strip() for l in lines if len(l)>0]
 
 
 with open(HOSTS_PATH, 'r+') as h:
@@ -18,7 +21,7 @@ with open(HOSTS_PATH, 'r+') as h:
         print('These websites were blocked:')
         for w in already_blocked:
             if not w == '':
-                print('- %s' %w)
+                print('- %s' %w.split()[1])
         print('')
         print('Updating list of blocked websites')
 

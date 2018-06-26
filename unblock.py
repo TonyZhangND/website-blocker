@@ -19,7 +19,7 @@ with open(HOSTS_PATH, 'r+') as h:
         print('These websites are now unblocked:')
         for w in prev_blocked:
             if not w == '':
-                print('- %s' %w)
+                print('- %s' %w.split()[1])
 
     except ValueError:
         print('No websites were blocked')
