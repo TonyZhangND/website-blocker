@@ -32,6 +32,7 @@ with open(HOSTS_PATH, 'r+') as h:
     
     for w in websites_to_block:
         lines.append('127.0.0.1 %s' %w)
+        lines.append('::1 %s' %w)
     h.seek(0)
     h.write('\n'.join(lines))
     h.truncate()
